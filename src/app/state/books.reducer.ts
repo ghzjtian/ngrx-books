@@ -5,6 +5,7 @@ import { Book } from '../book-list/books.model';
 
 export const initialState: ReadonlyArray<Book> = [];
 
+// 把收集到的 book 列表放到 reducer 里.
 export const booksReducer = createReducer(
   initialState,
   on(retrievedBookList, (state, { books }) => books)

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import { selectBookCollection, selectBooks } from './state/books.selectors';
+import { displayBooks, selectBookCollection, selectBooks } from './state/books.selectors';
 import {
   retrievedBookList,
   addBook,
@@ -14,7 +14,8 @@ import { GoogleBooksService } from './book-list/books.service';
   templateUrl: './app.component.html',
 })
 export class AppComponent {
-  books$ = this.store.select(selectBooks);
+  // books$ = this.store.select(selectBooks);
+  books$ = this.store.select(displayBooks);
   bookCollection$ = this.store.select(selectBookCollection);
 
   onAdd(bookId: string) {
